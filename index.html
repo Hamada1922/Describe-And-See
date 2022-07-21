@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="قم بوصف أي شخص وشاهد ماذا يقول لك أو عنك">
+    <meta name="keywords" content="لعبة, وصف, شخص, حب, أهل, انطباع, أفكار, رأى, علاقة, مشاعر">
+    <title>Describe And See</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/describe-and-see.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="#describe" class="logo"> أوصف <span> و </span> شوف </a>
+            <ul class="main-menu">
+                <li>
+                    <a href="#">الرأس و الوجه</a>
+                    <ul class="mega-menu one">
+                        <li>
+                            <a href="#eye">
+                                <i class="fa-solid fa-eye fa-fw"></i>
+                                العينين
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#skin">
+                                <i class="fa-solid fa-hand-dots"></i>
+                                البشرة
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#hair">
+                                <i class="fa-solid fa-hat-cowboy fa-fw"></i>
+                                الشعر
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#body">هيئة الجسم</a>
+                    <ul class="mega-menu two">
+                        <li>
+                            <a href="#length">
+                                <i class="fa-solid fa-ruler fa-fw"></i>
+                                الطول
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#weight">
+                                <i class="fa-solid fa-weight-scale fa-fw"></i>
+                                الوزن
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="landing">
+        <div class="container">
+            <div class="text">
+                <h2> أوصف <span>و</span> شوف</h2>
+                <p>
+                    أهلا" بك فى هذه اللعبة حيث يمكنك هنا وصف شكل و هيئة و ملامح أى شخص تختاره وبعد أن تنتهي الوصف الصحيح
+                    ستعرف ما يفكر فيه ذلك الشخص حولك أو رأيه تجاهك أو انطباعه عنك الان أنعش ذاكرتك واستعد للمفاجأة أو
+                    الصدمة فلا أحد يعلم ما ستكون النيجة
+                </p>
+            </div>
+            <div class="image">
+                <img src="image/landing.png" alt="describe he or she">
+            </div>
+        </div>
+        <div class="go-down">
+            <a href="#describe"><i class="fas fa-angle-double-down fa-fw "></i></a>
+            <a href="#describe"><i class="fas fa-angle-double-down fa-fw "></i></a>
+            <a href="#describe"><i class="fas fa-angle-double-down fa-fw "></i></a>
+        </div>
+    </section>
+    <section class="describe" id="describe">
+        <div class="container">
+            <div class="first-char single">
+                <label for="first-char"><i class="fa-solid fa-a fa-fw"></i> أول حرف </label>
+                <select name="first-char" id="first-char">
+                    <option value="1">أ</option>
+                    <option value="2">ب</option>
+                    <option value="3">ت</option>
+                    <option value="4">ث</option>
+                    <option value="5">ج</option>
+                    <option value="6">ح</option>
+                    <option value="7">خ</option>
+                    <option value="8">د</option>
+                    <option value="9">ذ</option>
+                    <option value="10">ر</option>
+                    <option value="11">ز</option>
+                    <option value="12">س</option>
+                    <option value="13">ش</option>
+                    <option value="14">ص</option>
+                    <option value="15">ض</option>
+                    <option value="16">ط</option>
+                    <option value="17">ظ</option>
+                    <option value="18">ع</option>
+                    <option value="19">غ</option>
+                    <option value="20">ف</option>
+                    <option value="21">ق</option>
+                    <option value="22">ك</option>
+                    <option value="23">ل</option>
+                    <option value="24">م</option>
+                    <option value="25">ن</option>
+                    <option value="26">ه</option>
+                    <option value="27">و</option>
+                    <option value="28">ى</option>
+                </select>
+            </div>
+            <div class="face double" id="face">
+                <div class="eye" id="eye">
+                    <label for="eye-color"><i class="fa-solid fa-eye fa-fw"></i> لون العينين </label>
+                    <select name="eye-color" id="eye-color">
+                        <option value="1">عسلى/ بني</option>
+                        <option value="2">أسود</option>
+                        <option value="3">أخضر</option>
+                        <option value="4">أزرق</option>
+                    </select>
+                </div>
+                <div class="skin" id="skin">
+                    <label for="skin-color"><i class="fa-solid fa-hand-dots"></i> لون البشرة </label>
+                    <select name="skin-color" id="skin-color">
+                        <option value="1">أسود</option>
+                        <option value="2">قمحاوى</option>
+                        <option value="3">برونزي</option>
+                        <option value="4">أبيض</option>
+                    </select>
+                </div>
+            </div>
+            <div class="hair single" id="hair">
+                <label for="hair-color"><i class="fa-solid fa-hat-cowboy fa-fw"></i> لون الشعر </label>
+                <select name="hair-color" id="hair-color">
+                    <option value="1">بني</option>
+                    <option value="2">أسود</option>
+                    <option value="3">أصفر</option>
+                    <option value="4">أحمر</option>
+                </select>
+            </div>
+            <div class="body double">
+                <div class="length" id="length">
+                    <label for="meter"><i class="fa-solid fa-ruler fa-fw"></i> الطول </label>
+                    <select name="meter" id="meter">
+                        <option value="1">قزم</option>
+                        <option value="2">قصير</option>
+                        <option value="3">متوسط الطول</option>
+                        <option value="2">طويل</option>
+                        <option value="1">عملاق</option>
+                    </select>
+                </div>
+                <div class="weight" id="weight">
+                    <label for="kg"><i class="fa-solid fa-weight-scale fa-fw"></i> الوزن </label>
+                    <select name="kg" id="kg">
+                        <option value="1"> سومو</option>
+                        <option value="2">بدين</option>
+                        <option value="3">معتدل الوزن</option>
+                        <option value="4">عضلي</option>
+                        <option value="3">مفيش كرش</option>
+                        <option value="2">نحبف</option>
+                        <option value="1">جلد علي عظم</option>
+                    </select>
+                </div>
+            </div>
+            <div class="meeting single">
+                <label for="meet"><i class="fa-solid fa-handshake"></i> أين تقابله </label>
+                <select name="meet" id="meet">
+                    <option value="1">المناسبات / الأعياد</option>
+                    <option value="2">المدرسة / العمل</option>
+                    <option value="3">الشارع/ الحى</option>
+                    <option value="4">البيت / السكن</option>
+                    <option value="5">فى كل مكان</option>
+                    <option value="1">تتكلم عن نفسك</option>
+                </select>
+            </div>
+            <button id="result" class="result">عرض النتيجة</button>
+        </div>
+    </section>
+    <section class="see">
+        <div class="container">
+            <div class="content">
+                <p>المجموع : <span class="total" id="total">0</span> نقطة</p>
+                <p id="para">
+                    شوف حظك
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Designed By &lt; <span>Hamada Yasser</span> All Copyright &copy; Reserved</p>
+    </footer>
+    <script src="javascript/beta.js"></script>
+</body>
+
+</html>
