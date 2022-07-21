@@ -213,7 +213,7 @@ header .mega-menu {
 
 @media (max-width: 767px) {
     header .mega-menu {
-        width: 450%;
+        width: 400%;
         text-align: center;
     }
 
