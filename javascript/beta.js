@@ -1,4 +1,5 @@
 let firstChar = document.getElementById("first-char"),
+    charNumber = document.getElementById("char-num"),
     eye = document.getElementById("eye-color"),
     skin = document.getElementById("skin-color"),
     hair = document.getElementById("hair-color"),
@@ -6,11 +7,80 @@ let firstChar = document.getElementById("first-char"),
     weight = document.getElementById("kg"),
     meet = document.getElementById("meet"),
     result = document.getElementById("result"),
+    more = document.getElementById("more"),
     para = document.getElementById("para"),
-    total = document.getElementById("total");
+    total = document.getElementById("total"),
 
+    //
+    counter = document.getElementById("counter"),
+    overlay = document.getElementById("overlay"),
+    start = document.getElementById("start"),
+
+    //
+    colorDiv = document.getElementById("color-div"),
+    changeSelect = document.getElementById("change-select"),
+    circleMenu = document.getElementById("circle-menu"),
+    btnChange = document.getElementById("btn-change"),
+
+    //
+    wow = document.querySelector(".wow"),
+    arrowDown = document.querySelectorAll(".fa-angle-double-down"),
+    myName = document.querySelector("footer p span"),
+    iconColors = document.querySelector("#circle-menu i"),
+    selectInnerCOlor = document.querySelectorAll(".describe .container .double div select"),
+    logo = document.querySelector(".logo"),
+    //
+    up = document.querySelector(".up");
+
+let random = "";
+let colorMood = "on";
+
+console.log(up);
+
+// Countdown set
+let countdown = setInterval(() => {
+    counter.innerHTML -= 1;
+    if (counter.innerHTML === "0") {
+        counter.innerHTML = "100";
+    }
+}, 300);
+
+// counter
+start.onclick = () => {
+    let counterValue = parseInt(counter.innerHTML);
+    overlay.style.display = "none";
+    result.style.zIndex = "2";
+    more.style.zIndex = "2";
+    console.log(counterValue);
+    if (counterValue <= 10) {
+        random = "sub";
+    } else if (counterValue > 10 && counterValue <= 20) {
+        random = "sum";
+    } else if (counterValue > 20 && counterValue <= 30) {
+        random = "div";
+    } else if (counterValue > 30 && counterValue <= 40) {
+        random = "mul";
+    } else if (counterValue > 40 && counterValue <= 50) {
+        random = "sub+2";
+    } else if (counterValue > 50 && counterValue <= 60) {
+        random = "sum-3";
+    } else if (counterValue > 60 && counterValue <= 70) {
+        random = "div+4";
+    } else if (counterValue > 70 && counterValue <= 80) {
+        random = "mul-2";
+    } else if (counterValue > 80 && counterValue <= 90) {
+        random = "sum";
+    } else if (counterValue > 90 && counterValue <= 100) {
+        random = "sub";
+    }
+}
+
+// Sum
 result.onclick = function () {
-    var sum =
+    let final = 0;
+    let numberValue = parseInt(charNumber.value);
+
+    let sum =
         +firstChar.value
         + +eye.value
         + +skin.value
@@ -19,8 +89,44 @@ result.onclick = function () {
         + +weight.value
         + +meet.value;
 
+    switch (random) {
+        case "sub":
+            final = sum - numberValue;
+            break;
+        case "sum":
+            final = sum + numberValue;
+            break;
+        case "div":
+            final = sum / numberValue;
+            break;
+        case "mul":
+            final = sum * 2;
+            break;
+        case "sub+2":
+            final = sum - numberValue + 2;
+            break;
+        case "sum-3":
+            final = sum + numberValue - 2;
+            break;
+        case "div+4":
+            final = sum / numberValue + 4;
+            break;
+        case "mul-2":
+            final = sum * 2 - 4;
+            break;
+        default:
+            final = sum;
+            break;
+    }
+    if (final < 7) {
+        final = 7 + numberValue;
+    } else if (final > 42) {
+        final = 45 - numberValue;
+    }
+    console.log(final);
     total.innerHTML = sum;
-    switch (sum) {
+
+    switch (final) {
         case 7:
             para.innerHTML = "الحياة لا تعدل فقط تعود عليها كما هي"
             break;
@@ -132,7 +238,76 @@ result.onclick = function () {
         default:
             para.innerHTML = "شوف حظك"
     }
-
+    more.style.display = "block";
+    overlay.style.display = "block";
 }
 
+// reload button
+more.onclick = () => window.location.reload();
 
+// change color show
+
+circleMenu.onclick = () => {
+    if (colorMood === "on") {
+        colorDiv.style.display = "block";
+        colorMood = "off";
+    } else {
+        colorDiv.style.display = "none";
+        colorMood = "on";
+    }
+}
+
+// change color
+
+changeColor = function (color) {
+    logo.style.color = `${color}`;
+    wow.style.color = `${color}`;
+    start.style.backgroundColor = `${color}`;
+    result.style.backgroundColor = `${color}`;
+    more.style.backgroundColor = `${color}`;
+    total.style.color = `${color}`;
+    myName.style.color = `${color}`;
+    iconColors.style.color = `${color}`;
+    changeSelect.style.cssText = `
+    color: ${color};
+    border-color: ${color};
+    `;
+    up.style.cssText = `
+    border-bottom-color: ${color};
+    `;
+
+    //
+    for (let i = 0; i < arrowDown.length; i++) {
+        arrowDown[i].style.color = `${color}`;
+    }
+    for (let i = 0; i < selectInnerCOlor.length; i++) {
+        selectInnerCOlor[i].style.color = `${color}`;
+    }
+}
+
+if (localStorage.getItem("color")) {
+    changeColor(localStorage.color);
+}
+
+btnChange.onclick = () => {
+    changeColor(changeSelect.value)
+    localStorage.setItem("color", changeSelect.value);
+}
+
+// up button
+window.onscroll = () => {
+    if (window.scrollY < 100) {
+        up.style.display = "none";
+    } else {
+        up.style.display = "block";
+    }
+    console.log(scrollY)
+};
+
+up.onclick = () => {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
+};

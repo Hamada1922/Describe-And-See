@@ -20,54 +20,26 @@
     <header>
         <div class="container">
             <a href="#describe" class="logo"> أوصف <span> و </span> شوف </a>
-            <ul class="main-menu">
-                <li>
-                    <a href="#">الرأس و الوجه</a>
-                    <ul class="mega-menu one">
-                        <li>
-                            <a href="#eye">
-                                <i class="fa-solid fa-eye fa-fw"></i>
-                                العينين
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#skin">
-                                <i class="fa-solid fa-hand-dots"></i>
-                                البشرة
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#hair">
-                                <i class="fa-solid fa-hat-cowboy fa-fw"></i>
-                                الشعر
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#body">هيئة الجسم</a>
-                    <ul class="mega-menu two">
-                        <li>
-                            <a href="#length">
-                                <i class="fa-solid fa-ruler fa-fw"></i>
-                                الطول
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#weight">
-                                <i class="fa-solid fa-weight-scale fa-fw"></i>
-                                الوزن
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
         </div>
     </header>
+    <div class="colors" id="circle-menu">
+        <i class="fa-solid fa-palette"></i>
+    </div>
+    <div class="change" id="color-div">
+        <label for="change">اختر لونك </label>
+        <select name="change" id="change-select">
+            <option value="#1da1f2">الازرق</option>
+            <option value="#f2371d">البرتقالى</option>
+            <option value="#3af21d">الاخضر</option>
+            <option value="#f00">الاحمر</option>
+            <option value="#d01df2">الارجوانى</option>
+        </select>
+        <button class="btn-change" id="btn-change">تم</button>
+    </div>
     <section class="landing">
         <div class="container">
             <div class="text">
-                <h2> أوصف <span>و</span> شوف</h2>
+                <h2> أوصف <span class="wow">و</span> شوف</h2>
                 <p>
                     أهلا" بك فى هذه اللعبة حيث يمكنك هنا وصف شكل و هيئة و ملامح أى شخص تختاره وبعد أن تنتهي الوصف الصحيح
                     ستعرف ما يفكر فيه ذلك الشخص حولك أو رأيه تجاهك أو انطباعه عنك الان أنعش ذاكرتك واستعد للمفاجأة أو
@@ -85,43 +57,74 @@
         </div>
     </section>
     <section class="describe" id="describe">
+        <button class="start" id="start">أبدأ اللعب</button>
+        <span class="counter" id="counter">100</span>
+        <section id="overlay" class="overlay"></section>
         <div class="container">
-            <div class="first-char single">
-                <label for="first-char"><i class="fa-solid fa-a fa-fw"></i> أول حرف </label>
-                <select name="first-char" id="first-char">
-                    <option value="1">أ</option>
-                    <option value="2">ب</option>
-                    <option value="3">ت</option>
-                    <option value="4">ث</option>
-                    <option value="5">ج</option>
-                    <option value="6">ح</option>
-                    <option value="7">خ</option>
-                    <option value="8">د</option>
-                    <option value="9">ذ</option>
-                    <option value="10">ر</option>
-                    <option value="11">ز</option>
-                    <option value="12">س</option>
-                    <option value="13">ش</option>
-                    <option value="14">ص</option>
-                    <option value="15">ض</option>
-                    <option value="16">ط</option>
-                    <option value="17">ظ</option>
-                    <option value="18">ع</option>
-                    <option value="19">غ</option>
-                    <option value="20">ف</option>
-                    <option value="21">ق</option>
-                    <option value="22">ك</option>
-                    <option value="23">ل</option>
-                    <option value="24">م</option>
-                    <option value="25">ن</option>
-                    <option value="26">ه</option>
-                    <option value="27">و</option>
-                    <option value="28">ى</option>
-                </select>
+            <div class="char double">
+                <div class="first-char">
+                    <label for="first-char">
+                        <i class="fa-solid fa-a fa-fw"></i>
+                        أول حرف
+                    </label>
+                    <select name="first-char" id="first-char">
+                        <option value="1">أ</option>
+                        <option value="2">ب</option>
+                        <option value="3">ت</option>
+                        <option value="4">ث</option>
+                        <option value="5">ج</option>
+                        <option value="6">ح</option>
+                        <option value="7">خ</option>
+                        <option value="8">د</option>
+                        <option value="9">ذ</option>
+                        <option value="10">ر</option>
+                        <option value="11">ز</option>
+                        <option value="12">س</option>
+                        <option value="13">ش</option>
+                        <option value="14">ص</option>
+                        <option value="15">ض</option>
+                        <option value="16">ط</option>
+                        <option value="17">ظ</option>
+                        <option value="18">ع</option>
+                        <option value="19">غ</option>
+                        <option value="20">ف</option>
+                        <option value="21">ق</option>
+                        <option value="22">ك</option>
+                        <option value="23">ل</option>
+                        <option value="24">م</option>
+                        <option value="25">ن</option>
+                        <option value="26">ه</option>
+                        <option value="27">و</option>
+                        <option value="28">ى</option>
+                    </select>
+                </div>
+
+                <div class="chars-number">
+                    <label for="char-num">
+                        <i class="fa-solid fa-calculator fa-fw"></i>
+                        عدد الحروف
+                    </label>
+                    <select name="char-num" id="char-num">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="2">6</option>
+                        <option value="5">7</option>
+                        <option value="2">8</option>
+                        <option value="3">9</option>
+                        <option value="1">10</option>
+                    </select>
+                </div>
             </div>
+
             <div class="face double" id="face">
                 <div class="eye" id="eye">
-                    <label for="eye-color"><i class="fa-solid fa-eye fa-fw"></i> لون العينين </label>
+                    <label for="eye-color">
+                        <i class="fa-solid fa-eye fa-fw"></i>
+                        لون العينين
+                    </label>
                     <select name="eye-color" id="eye-color">
                         <option value="1">عسلى/ بني</option>
                         <option value="2">أسود</option>
@@ -129,8 +132,12 @@
                         <option value="4">أزرق</option>
                     </select>
                 </div>
+
                 <div class="skin" id="skin">
-                    <label for="skin-color"><i class="fa-solid fa-hand-dots"></i> لون البشرة </label>
+                    <label for="skin-color">
+                        <i class="fa-solid fa-hand-dots"></i>
+                        لون البشرة
+                    </label>
                     <select name="skin-color" id="skin-color">
                         <option value="1">أسود</option>
                         <option value="2">قمحاوى</option>
@@ -139,18 +146,13 @@
                     </select>
                 </div>
             </div>
-            <div class="hair single" id="hair">
-                <label for="hair-color"><i class="fa-solid fa-hat-cowboy fa-fw"></i> لون الشعر </label>
-                <select name="hair-color" id="hair-color">
-                    <option value="1">بني</option>
-                    <option value="2">أسود</option>
-                    <option value="3">أصفر</option>
-                    <option value="4">أحمر</option>
-                </select>
-            </div>
+
             <div class="body double">
                 <div class="length" id="length">
-                    <label for="meter"><i class="fa-solid fa-ruler fa-fw"></i> الطول </label>
+                    <label for="meter">
+                        <i class="fa-solid fa-ruler fa-fw"></i>
+                        الطول
+                    </label>
                     <select name="meter" id="meter">
                         <option value="1">قزم</option>
                         <option value="2">قصير</option>
@@ -159,8 +161,12 @@
                         <option value="1">عملاق</option>
                     </select>
                 </div>
+
                 <div class="weight" id="weight">
-                    <label for="kg"><i class="fa-solid fa-weight-scale fa-fw"></i> الوزن </label>
+                    <label for="kg">
+                        <i class="fa-solid fa-weight-scale fa-fw"></i>
+                        الوزن
+                    </label>
                     <select name="kg" id="kg">
                         <option value="1"> سومو</option>
                         <option value="2">تخين</option>
@@ -172,18 +178,40 @@
                     </select>
                 </div>
             </div>
-            <div class="meeting single">
-                <label for="meet"><i class="fa-solid fa-handshake"></i> أين تقابله </label>
-                <select name="meet" id="meet">
-                    <option value="1">المناسبات / الأعياد</option>
-                    <option value="2">المدرسة / العمل</option>
-                    <option value="3">الشارع/ الحى</option>
-                    <option value="4">البيت / السكن</option>
-                    <option value="5">فى كل مكان</option>
-                    <option value="1">تتكلم عن نفسك</option>
-                </select>
+
+            <div class="last double">
+                <div class="hair" id="hair">
+                    <label for="hair-color">
+                        <i class="fa-solid fa-hat-cowboy fa-fw"></i>
+                        لون الشعر
+                    </label>
+                    <select name="hair-color" id="hair-color">
+                        <option value="1">بني</option>
+                        <option value="2">أسود</option>
+                        <option value="3">أصفر</option>
+                        <option value="4">أحمر</option>
+                    </select>
+                </div>
+
+                <div class="meeting">
+                    <label for="meet">
+                        <i class="fa-solid fa-handshake"></i>
+                        أين تقابله
+                    </label>
+                    <select name="meet" id="meet">
+                        <option value="1">المناسبات / الأعياد</option>
+                        <option value="2">المدرسة / العمل</option>
+                        <option value="3">الشارع/ الحى</option>
+                        <option value="4">البيت / السكن</option>
+                        <option value="5">فى كل مكان</option>
+                        <option value="1">تتكلم عن نفسك</option>
+                    </select>
+                </div>
             </div>
-            <button id="result" class="result">عرض النتيجة</button>
+            <div class="btn">
+                <button id="result" class="result">عرض النتيجة</button>
+                <button id="more" class="more"> ألعب مجددا</button>
+            </div>
         </div>
     </section>
     <section class="see">
@@ -196,6 +224,9 @@
             </div>
         </div>
     </section>
+    <div class="up">
+        <i class="fa-solid fa-hand-point-up"></i>
+    </div>
     <footer>
         <p>Designed By &lt; <span>Hamada Yasser</span> All Copyright &copy; Reserved</p>
     </footer>
