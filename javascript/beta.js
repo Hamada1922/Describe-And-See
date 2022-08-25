@@ -7,7 +7,6 @@ let firstChar = document.getElementById("first-char"),
     weight = document.getElementById("kg"),
     meet = document.getElementById("meet"),
     result = document.getElementById("result"),
-    more = document.getElementById("more"),
     para = document.getElementById("para"),
     total = document.getElementById("total"),
 
@@ -35,8 +34,6 @@ let firstChar = document.getElementById("first-char"),
 let random = "";
 let colorMood = "on";
 
-console.log(up);
-
 // Countdown set
 let countdown = setInterval(() => {
     counter.innerHTML -= 1;
@@ -50,8 +47,6 @@ start.onclick = () => {
     let counterValue = parseInt(counter.innerHTML);
     overlay.style.display = "none";
     result.style.zIndex = "2";
-    more.style.zIndex = "2";
-    console.log(counterValue);
     if (counterValue <= 10) {
         random = "sub";
     } else if (counterValue > 10 && counterValue <= 20) {
@@ -123,7 +118,6 @@ result.onclick = function () {
     } else if (final > 42) {
         final = 45 - numberValue;
     }
-    console.log(final);
     total.innerHTML = sum;
 
     switch (final) {
@@ -238,12 +232,9 @@ result.onclick = function () {
         default:
             para.innerHTML = "شوف حظك"
     }
-    more.style.display = "block";
     overlay.style.display = "block";
 }
 
-// reload button
-more.onclick = () => window.location.reload();
 
 // change color show
 
@@ -264,7 +255,6 @@ changeColor = function (color) {
     wow.style.color = `${color}`;
     start.style.backgroundColor = `${color}`;
     result.style.backgroundColor = `${color}`;
-    more.style.backgroundColor = `${color}`;
     total.style.color = `${color}`;
     myName.style.color = `${color}`;
     iconColors.style.color = `${color}`;
@@ -301,7 +291,6 @@ window.onscroll = () => {
     } else {
         up.style.display = "block";
     }
-    console.log(scrollY)
 };
 
 up.onclick = () => {

@@ -627,7 +627,7 @@ header .mega-menu li:hover a {
 .describe .container>div select {
     background-color: #585757;
     color: var(--main-color);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     text-align: center;
@@ -643,8 +643,7 @@ header .mega-menu li:hover a {
     }
 }
 
-.result,
-.more {
+.result {
     border: none;
     padding: 15px 20px;
     border-radius: 50px;
@@ -658,15 +657,10 @@ header .mega-menu li:hover a {
 
 @media(max-width: 767px) {
 
-    .result,
-    .more {
+    .result {
         width: 100%;
         font-weight: 18px;
     }
-}
-
-.more {
-    display: none;
 }
 
 /* Describe E */
